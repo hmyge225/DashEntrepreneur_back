@@ -18,7 +18,11 @@ class MentorFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'availability' => fake()->boolean(),
+            'name' => fake()->name(),
+            'email' => fake()->unique()->safeEmail(),
+            'phone' => fake()->phoneNumber(),
+            'city' => fake()->city(),
         ];
     }
 }
